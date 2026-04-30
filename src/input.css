@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.marble {
+    background-color: #F0EFE2;
+    background-image: 
+        linear-gradient(rgba(240,235,227,0.6), rgba(240,235,227,0.6)),
+        url('/build/img/marble.png');
+    background-size: cover;
+    background-position: center;
+}
