@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sm:scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,11 +23,11 @@
                     &#9776;
                 </button>
                 <nav class="hidden sm:block space-x-8 text-xl font-Inter" aria-label="main">
-                    <a href="#about">About Us</a>
-                    <a href="#expertise">Practice Areas</a>
-                    <a href="#fees">Fees</a>
-                    <a href="#why">Why Us</a>
-                    <a href="#contact">Contact Us</a>
+                    <a href="#about" class="hover:underline">About Us</a>
+                    <a href="#expertise" class="hover:underline">Practice Areas</a>
+                    <a href="#fees" class="hover:underline">Fees</a>
+                    <a href="#why" class="hover:underline">Why Us</a>
+                    <a href="#contact" class="hover:underline">Contact Us</a>
                 </nav>
             </div>
         </section>
@@ -41,8 +41,16 @@
                     <h1 class="font-['Abhaya_Libre'] text-6xl 2xl:text-8xl sm:text-center font-bold text-[#F0EFE2]">Justice Within <span class="text-[#E6A761]">Your Reach</span>.</h1>
                     <p class="w-98 font-['Inter'] sm:text-center 2xl:text-2xl text-[#F0EFE2] ">Jvsticia Law Office provides resolute, fair, and formidable legal representation without breaking the bank.</p>
                     <div class="flex flex-col sm:flex-row justify-center items-center mt-5 text-[#F0EFE2]">
-                        <button class="w-60 h-14 my-5 md:my-0 md:mx-5 2xl:w-96 2xl:h-20 2xl:text-2xl border-2 rounded-md p-2">Book a Consultation</button>
-                        <button class="w-60 h-14 my-5 md:my-0 md:mx-5 2xl:w-96 2xl:h-20 2xl:text-2xl border-2 rounded-md p-2">Explore</button>
+                        <a href="#contact">
+                            <button class="w-60 h-14 my-5 md:my-0 md:mx-5 2xl:w-96 2xl:h-20 2xl:text-2xl border-2 rounded-md p-2 transition-colors duration-150 ease-in-out hover:bg-white hover:text-black active:bg-gray-400">
+                                Book a Consultation
+                            </button>
+                        </a>
+                        <a href="#about">
+                            <button class="w-60 h-14 my-5 md:my-0 md:mx-5 2xl:w-96 2xl:h-20 2xl:text-2xl border-2 rounded-md p-2 transition-colors duration-150 ease-in-out hover:bg-white hover:text-black active:bg-gray-400">
+                                Explore
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -89,6 +97,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- This section contains the expertise section of the website which has the same layout as the about us section except the marble div box is reversed-->
         <section id="expertise" class="w-full min-h-screen bg-[#570907] flex flex-col 2xl:flex-row" >
             <!-- this div represents the left side of website containing the "our expertise" paragraph with bg-image(top left) and the "Transparent" heading(bottom left) -->
@@ -152,6 +161,124 @@
                     <div class="2xl:mb-10 2xl:mr-20 m-5 2xl:text-right sm:text-left text-center 2xl:pl-0 flex-1 text-[#570907]">
                         <p class="2xl:text-3xl">Honest rates for premium representation with no hidden charges.</p>
                         <h3 class="font-bold 2xl:text-4xl 2xl:mt-10 mt-2">Contact us for fees and pricing</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="min-h-screen bg-[url('/build/img/pillars2.jpg')] bg-cover bg-no-repeat flex justify-center items-center">
+            <!-- This div contains the law office's information (left) and the form for clients to fill-up for inquiries (right)-->
+            <div class="flex flex-col xl:flex-row">
+                <!-- This div represents the left side of the card containing the law office's address and contact information-->
+                <div class="hidden xl:flex flex-1 marble justify-center items-center">
+                    <div class="flex flex-col my-32">
+                        <div class="mb-10">
+                            <h2 class="text-[#570907] 2xl:text-7xl xl:text-5xl font-extrabold font-['Abhaya_Libre']">Get in Touch</h2>
+                            <p class="font-['Open_Sans'] 2xl:text-2xl xl:text-xl">Schedule a consultation to discus your legal options.</p>
+                        </div>
+                        <!-- Office address -->
+                        <div class="mb-10">
+                            <h3 class="text-[#570907] 2xl:text-5xl xl:text-3xl font-bold font-['Abhaya_Libre']">Office Address</h3>
+                            <p class="2xl:text-2xl xl:text-lg font-['Open_Sans']">
+                                Unit 201 - A Residencia de Manila<br>
+                                Suite, 3477, P. Sanchez St.,<br>
+                                Sta. Mesa, Metro Manila 1605<br>
+                            </p>
+                        </div>
+                        <!-- Contact numbers -->
+                        <div class="mb-10">
+                            <h3 class="text-[#570907] 2xl:text-5xl xl:text-3xl font-bold font-['Abhaya_Libre']">
+                                Phone
+                            </h3>
+                            <p class="2xl:text-2xl xl:text-lg font-['Open_Sans']"> 
+                                +63 (2) 8815-2624<br>
+                                +63 977 407 9796<br>
+                                +63 926 722 7544<br>
+                            </p>
+                        </div>
+                        <!-- Email addresses -->
+                        <div class="mb-10">
+                            <h3 class="text-[#570907] 2xl:text-5xl xl:text-3xl font-bold font-['Abhaya_Libre']">Email</h3>
+                            <p class="2xl:text-2xl xl:text-lg font-['Open_Sans']">
+                                j.ibabao@jvsticialawoffice.ph<br>
+                                k.ladines@jvsticialawoffice.ph<br>
+                            </p>
+                        </div>
+                        <!-- Office hours -->
+                        <div class="mb-10">
+                            <h3 class="text-[#570907] 2xl:text-5xl xl:text-3xl font-bold font-['Abhaya_Libre']">Office Hours</h3>
+                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']">    
+                                Monday &#8211; Friday: 9:00 AM &#8211; 6:00 PM<br>
+                                Saturday: By Appointment
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- this div represents the right side of the box containing the message form for the client to fill -->
+                <div class="flex-1 flex justify-center items-center bg-[#570907]">
+                    <!-- content div containing the form -->
+                    <div class="p-24">
+                        <form action="" class="max-w-full">
+                            <!-- full name textfield -->
+                            <label for="full-name" class="text-white 2xl:text-2xl text-xl font-['Open_Sans']">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" placeholder="John Doe" class="w-full border-4 border-[#C7A776] rounded-sm mt-2 mb-10 h-10 pl-2 2xl:text-xl text-lg">
+                            <!-- contact no. textfield -->
+                            <label for="contact"  class="text-white 2xl:text-2xl text-xl font-['Open_Sans']">Contact Number</label>
+                            <input type="text" id="contact" name="contact" placeholder="09123456789" class="w-full border-4 border-[#C7A776] rounded-sm mt-2 mb-10 h-10 pl-2 2xl:text-xl text-lg">
+                            <!-- email address textfield-->
+                            <label for="email" class="text-white 2xl:text-2xl text-xl font-['Open_Sans']">Email Address</label>
+                            <input type="text" id="full-name" name="full-name" placeholder="example@gmail.com" class="w-full border-4 border-[#C7A776] rounded-sm mt-2 mb-10 pl-2 h-10 2xl:text-xl text-lg">
+                            <!-- message text area -->
+                            <textarea name="message" id="message" cols="20" rows="10" placeholder="Your Message" class="w-full border-4 border-[#C7A776] rounded-sm mt-2 mb-10 pl-2 pt-2 2xl:text-xl text-lg"></textarea>
+                            <button class="bg-[#C7A776] text-xl font-['Open_Sans'] font-bold p-5 mt-5 rounded-md transition-opacity hover:opacity-85 active:opacity-70">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- hidden. only shows when in mobile view to show form above the company info-->
+                <div class="xl:hidden flex flex-1 marble justify-center items-center">
+                    <div class="flex flex-col my-32">
+                        <div class="mb-10">
+                            <h2 class="text-[#570907] 2xl:text-7xl md:text-5xl font-extrabold font-['Abhaya_Libre']">Get in Touch</h2>
+                            <p class="font-['Open_Sans'] 2xl:text-2xl md:text-xl">Schedule a consultation to discus your legal options.</p>
+                        </div>
+                        <!-- Office address -->
+                        <div class="mb-10">
+                            <h3 class="text-[#570907] 2xl:text-5xl md:text-3xl font-bold font-['Abhaya_Libre']">Office Address</h3>
+                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']">
+                                Unit 201 - A Residencia de Manila<br>
+                                Suite, 3477, P. Sanchez St.,<br>
+                                Sta. Mesa, Metro Manila 1605<br>
+                            </p>
+                        </div>
+                        <!-- Contact numbers -->
+                        <div class="mb-10">
+                            <h3 class="text-[#570907] 2xl:text-5xl md:text-3xl font-bold font-['Abhaya_Libre']">
+                                Phone
+                            </h3>
+                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']"> 
+                                +63 (2) 8815-2624<br>
+                                +63 977 407 9796<br>
+                                +63 926 722 7544<br>
+                            </p>
+                        </div>
+                        <!-- Email addresses -->
+                        <div class="mb-10">
+                            <h3 class="text-[#570907] 2xl:text-5xl md:text-3xl font-bold font-['Abhaya_Libre']">Email</h3>
+                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']">
+                                j.ibabao@jvsticialawoffice.ph<br>
+                                k.ladines@jvsticialawoffice.ph<br>
+                            </p>
+                        </div>
+                        <!-- Office hours -->
+                        <div class="mb-10">
+                            <h3 class="text-[#570907] 2xl:text-5xl md:text-3xl font-bold font-['Abhaya_Libre']">Office Hours</h3>
+                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']">    
+                                Monday &#8211; Friday: 9:00 AM &#8211; 6:00 PM<br>
+                                Saturday: By Appointment
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
