@@ -14,15 +14,15 @@
 </head>
 <body class="bg-black">
     <header class="bg-transparent font-['Inter'] text-[#F0EFE2] font-normal fixed top-0 right-0 left-0 z-50">
-        <section class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+        <section class="xl:max-w-7xl max-w-4xl mx-auto p-4 flex justify-between items-center">
             <a href="#hero">
                 <img class="max-h-14" src="/build/img/JLO_LOGO.png">
             </a>
             <div>
-                <button id="mobile-open-button" class="text-3xl sm:hidden focus:outline-none">
+                <button id="mobile-open-button" onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')" class="text-3xl lg:hidden focus:outline-none">
                     &#9776;
                 </button>
-                <nav class="hidden sm:block space-x-8 text-xl font-Inter" aria-label="main">
+                <nav class="hidden lg:block space-x-8 xl:text-xl lg:text-md font-['Inter']" aria-label="main">
                     <a href="#about" class="hover:underline">About Us</a>
                     <a href="#expertise" class="hover:underline">Practice Areas</a>
                     <a href="#fees" class="hover:underline">Fees</a>
@@ -32,22 +32,39 @@
             </div>
         </section>
     </header>
+
+    <section>
+        <aside id="sidebar" class="-translate-x-full fixed inset-y-0 left-0 z-50 w-[220px] bg-[#060606] px-6 py-5 transition-transform duration-300">
+            <a href="#hero">
+                <img src="/build/img/JLO_J.png" alt="Jvsticia Law Office" class="h-20 w-20">
+            </a>
+            <nav class="flex flex-1 flex-col justify-center items-center space-y-8 text-white text-center font-['Inter']">
+                <a href="#about" class="hover:underline">About Us</a>
+                <a href="#expertise" class="hover:underline">Practice Areas</a>
+                <a href="#fees" class="hover:underline">Fees</a>
+                <a href="#why" class="hover:underline">Why Us</a>
+                <a href="#contact" class="hover:underline">Contact Us</a>
+            </nav>
+        </aside>
+
+    </section>
+
     <main>
         <!-- this section of the website contains the hero section showcasing the law firms tagline as well as buttons for inquiring with the firm -->
         <section id="hero" class="max-w-full h-screen bg-[url('/build/img/court1.png')] bg-cover bg-center flex justify-center items-center">
             <!-- the hero section's contents are all placed in the middle of the section -->
             <div class="max-h-4xl">
                 <div class="flex flex-col mx-5">
-                    <h1 class="font-['Abhaya_Libre'] text-6xl 2xl:text-8xl sm:text-center font-bold text-[#F0EFE2]">Justice Within <span class="text-[#E6A761]">Your Reach</span>.</h1>
-                    <p class="w-98 font-['Inter'] sm:text-center 2xl:text-2xl text-[#F0EFE2] ">Jvsticia Law Office provides resolute, fair, and formidable legal representation without breaking the bank.</p>
+                    <h1 class="font-['Abhaya_Libre'] text-5xl 2xl:text-7xl sm:text-center font-bold text-[#F0EFE2]">Justice Within <span class="text-[#E6A761]">Your Reach</span>.</h1>
+                    <p class="w-98 font-['Inter'] sm:text-center 2xl:text-xl text-[#F0EFE2] ">Jvsticia Law Office provides resolute, fair, and formidable legal representation without breaking the bank.</p>
                     <div class="flex flex-col sm:flex-row justify-center items-center mt-5 text-[#F0EFE2]">
                         <a href="#contact">
-                            <button class="w-60 h-14 my-5 md:my-0 md:mx-5 2xl:w-96 2xl:h-20 2xl:text-2xl border-2 rounded-md p-2 transition-colors duration-150 ease-in-out hover:bg-white hover:text-black active:bg-gray-400">
+                            <button class="2xl:w-64 2xl:h-16 w-60 h-14 my-5 md:my-0 md:mx-5 2xl:text-xl border-2 rounded-md p-2 transition-colors duration-150 ease-in-out hover:bg-white hover:text-black active:bg-gray-400">
                                 Book a Consultation
                             </button>
                         </a>
                         <a href="#about">
-                            <button class="w-60 h-14 my-5 md:my-0 md:mx-5 2xl:w-96 2xl:h-20 2xl:text-2xl border-2 rounded-md p-2 transition-colors duration-150 ease-in-out hover:bg-white hover:text-black active:bg-gray-400">
+                            <button class="2xl:w-64 2xl:h-16 w-60 h-14 my-5 md:my-0 md:mx-5 2xl:text-xl border-2 rounded-md p-2 transition-colors duration-150 ease-in-out hover:bg-white hover:text-black active:bg-gray-400">
                                 Explore
                             </button>
                         </a>
@@ -59,7 +76,7 @@
         <!-- This section contains the "about us" section. Divided into two (left and right) divs -->
         <section id="about" class="max-w-full min-h-screen bg-[#570907] flex flex-col 2xl:flex-row">
             <!-- This div represents the left part of the section containing flag image(top left) and city traffic image(bottom left) -->
-            <div class="2xl:w-[30%] flex flex-col md:max-2xl:flex-row 2xl:min-h-screen min-h-64 sm:max-2xl:h-96">
+            <div class="2xl:w-[25%] hidden 2xl:flex flex-col 2xl:min-h-screen">
                 <!-- This div represents the top-left side containing the flag image. A z-index of 10 was set to overlap over the top right div box -->
                 <div class="flex-1 bg-[url('/build/img/flag-1.jpg')] bg-cover bg-no-repeat 2xl:w-[100vh] border-8 border-[#570907] z-10"></div>
                 <!-- This div represents the bottom-left side containing the city traffic image -->
@@ -68,29 +85,32 @@
             <!-- This div represents the right part of the section divided again into two(top and bottom) -->
             <div class="flex flex-col flex-1">
                 <!-- The top right is left empty only with a bg-image to create space for the bottom right section -->
-                <div class="md:h-[30%] sm:min-h-48 min-h-32 bg-[url('/build/img/ph-4.jpg')] 2xl:border-b-2 border-8 border-[#570907] bg-bottom bg-cover"></div>
+                <div class="hidden 2xl:block md:h-[30%] bg-[url('/build/img/ph-4.jpg')] 2xl:border-b-2 border-8 border-[#570907] bg-bottom bg-cover"></div>
                 <!-- The bottom right includes the marble div box containing the description about the company and its stats -->
-                <div class="marble flex flex-1 flex-col justify-center items-center 2xl:rounded-tl-full 2xl:border-t-8 2xl:border-l-8 2xl:border-[#570907] sm:max-2xl:rounded-none z-10">
-                    <div class="my-32 mx-10 md:mx-32 lg:w-[50%] xl:w-[40%] 2xl:w-[40%]">
+                <div class="marble flex flex-1 justify-center items-center 2xl:rounded-tl-[10rem] 2xl:border-t-8 2xl:border-l-8 2xl:border-[#570907] sm:max-2xl:rounded-none z-10">
+                    <div class="2xl:hidden lg:block hidden flex-1 bg-[url('/build/img/flag-1.jpg')] bg-cover bg-no-repeat rounded-r-3xl h-[60rem] shadow-2xl"></div>
+                    <div class="2xl:flex-none lg:flex-1 2xl:m-0 md:mx-24 mx-32 2xl:w-[30%]">
                         <div>
-                            <h1 class="font-['Abhaya_Libre'] font-extrabold text-center md:text-left text-5xl 2xl:text-6xl text-[#570907]">Fierce Advocates for the Everyday <span class="text-[#E6A761]">Filipino</span>.</h1>
-                            <p class="font-['Inter'] mt-5 text-xl 2xl:text-2xl">
+                            <h1 class="font-['Abhaya_Libre'] font-extrabold text-center md:text-left text-4xl text-[#570907]">
+                                Fierce Advocates for the Everyday <span class="text-[#E6A761]">Filipino</span>.
+                            </h1>
+                            <p class="font-['Inter'] mt-5 2xl:text-xl text-lg">
                                 Founded on the principle that quality legal representation should not be a privilege
                                 reserved only for the wealthy.
                             </p>
-                            <p class="font-['Inter'] mt-5 text-xl 2xl:text-2xl">
+                            <p class="font-['Inter'] mt-5 2xl:text-xl text-lg">
                                 We combine the sharpness of a premium law firm with a caring and practical apporach to our 
                                 clients' critical life moments.
                             </p>
                         </div>
                         <div class="flex justify-between mt-10">
                             <div class="mx-1 2xl:m-0">
-                                <h1 class="font-['Abhaya_Libre'] font-semibold text-5xl 2xl:text-7xl text-[#E6A761]">10<span class="text-[#570907]">&#43;</span></h1>
-                                <p class="font-[Inter] 2xl:text-2xl">Years Experience</p>
+                                <h1 class="font-['Abhaya_Libre'] font-semibold text-5xl text-[#E6A761]">10<span class="text-[#570907]">&#43;</span></h1>
+                                <p class="font-[Inter] 2xl:text-xl">Years Experience</p>
                             </div>
                             <div class="mx-1 2xl:m-0">
-                                <h1 class="font-['Abhaya_Libre'] font-semibold text-5xl 2xl:text-7xl text-[#E6A761]">1000<span class="text-[#570907]">&#43;</span></h1>
-                                <p class="font-[Inter] 2xl:text-2xl">Cases Handled</p>
+                                <h1 class="font-['Abhaya_Libre'] font-semibold text-5xl text-[#E6A761]">1000<span class="text-[#570907]">&#43;</span></h1>
+                                <p class="font-[Inter] 2xl:text-xl">Cases Handled</p>
                             </div>
                         </div>
                     </div>
@@ -101,55 +121,55 @@
         <!-- This section contains the expertise section of the website which has the same layout as the about us section except the marble div box is reversed-->
         <section id="expertise" class="w-full min-h-screen bg-[#570907] flex flex-col 2xl:flex-row" >
             <!-- this div represents the left side of website containing the "our expertise" paragraph with bg-image(top left) and the "Transparent" heading(bottom left) -->
-            <div class="2xl:w-[30%] 2xl:min-h-screen flex flex-col">
+            <div class="2xl:w-[25%] 2xl:min-h-screen flex flex-col">
                 <!-- the top left consists of a div box containing the image and another div for the text content -->
                 <div class="2xl:h-[60%] w-full h-[20rem] flex justify-center 2xl:items-start items-center bg-[url('/build/img/building1.png')] bg-cover bg-center bg-no-repeat border-8 2xl:border-r-2 border-[#570907] ">'
-                    <div class="2xl:w-[30rem] 2xl:mt-32 text-white 2xl:text-left text-center">
-                        <h1 class="font-bold font-['Abhaya_Libre'] 2xl:text-7xl sm:text-5xl text-3xl">Our Expertise</h1>
-                        <p class="font-['Open_Sans'] 2xl:text-3xl sm:text-xl text-sm 2xl:mt-10 sm:mt-5 mt-2">Comprehensive legal solutions tailored to your circumstances</p>
+                    <div class="2xl:w-[20rem] 2xl:mt-24 text-white 2xl:text-left text-center">
+                        <h1 class="font-bold font-['Abhaya_Libre'] 2xl:text-5xl sm:text-5xl text-3xl">Our Expertise</h1>
+                        <p class="font-['Open_Sans'] 2xl:text-xl sm:text-xl text-sm 2xl:mt-10 sm:mt-5 mt-2">Comprehensive legal solutions tailored to your circumstances</p>
                     </div>
                 </div>
                 <!-- the bottom left side only contains the heading with the red background. a z-index of 10 was set to overlap over the right golden div box -->
                 <div class="hidden 2xl:flex 2xl:flex-1 2xl:justify-end 2xl:items-end bg-[#570907] 2xl:w-[100vh] 2xl:z-10">
-                    <div class="2xl:w-[40rem] 2xl:mr-20 2xl:mb-5 font-['Abhaya_Libre'] text-right">
-                        <h1 class="text-white font-bold 2xl:text-7xl">Transparent and Affordable Fees</h1>
+                    <div class="2xl:w-96 2xl:mr-20 2xl:mb-5 font-['Abhaya_Libre'] text-right">
+                        <h1 class="text-white font-bold 2xl:text-5xl">Transparent and Affordable Fees</h1>
                     </div>
                 </div>
             </div>
             <!-- this div contains the right side of the expertise section which contains the marble div(top right) and the fees paragraph(bottom right) -->
             <div class="flex flex-col flex-1">
                 <!-- the top right consists of once again the marble div box and as well as a grid which showcases the law firm's expertise -->
-                <div class="marble bg-bottom flex flex-1 justify-center items-center 2xl:rounded-bl-full 2xl:border-l-8 2xl:border-[#570907] sm:max-2xl:rounded-none z-10">
+                <div class="marble flex flex-1 justify-center items-center 2xl:rounded-bl-[10rem] 2xl:border-l-8 2xl:border-[#570907] sm:max-2xl:rounded-none z-10">
                     <div class="grid 2xl:grid-cols-3 2xl:grid-rows-2 md:grid-cols-2 md:grid-rows-3 grid-cols-1 grid-rows-6">
                         <!-- criminal defense -->
-                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[17rem] 2xl:w-[30rem] sm:w-[20rem] w-60 text-center 2xl:p-5 rounded-md m-10">
-                            <h2 class="text-[#E6A761] 2xl:text-5xl sm:text-4xl text-2xl font-bold font-['Abhaya_Libre']">Criminal Defense</h2>
-                            <p class="text-white 2xl:text-2xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Rigorous defense against criminal charges and strategic advocacy.</p>
+                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[15rem] 2xl:w-[25rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
+                            <h2 class="text-[#E6A761] 2xl:text-3xl sm:text-2xl text-xl font-bold font-['Abhaya_Libre']">Criminal Defense</h2>
+                            <p class="text-white 2xl:text-lg sm:text-md text-sm mt-5 font-[Open_Sans]">Rigorous defense against criminal charges and strategic advocacy.</p>
                         </div>
                         <!-- civil litigation -->
-                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[17rem] 2xl:w-[30rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
-                            <h2 class="text-[#E6A761] 2xl:text-5xl sm:text-4xl text-2xl font-bold font-['Abhaya_Libre']">Civil Litigation</h2>
-                            <p class="text-white 2xl:text-2xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Resolving disputes through skilled negotiation and courtroom action.</p>
+                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[15rem] 2xl:w-[25rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
+                            <h2 class="text-[#E6A761] 2xl:text-3xl sm:text-2xl text-xl font-bold font-['Abhaya_Libre']">Civil Litigation</h2>
+                            <p class="text-white 2xl:text-xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Resolving disputes through skilled negotiation and courtroom action.</p>
                         </div>
                         <!-- family law -->
-                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[17rem] 2xl:w-[30rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
-                            <h2 class="text-[#E6A761] 2xl:text-5xl sm:text-4xl text-2xl font-bold font-['Abhaya_Libre']">Family Law</h2>
-                            <p class="text-white 2xl:text-2xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Compassionate handling of annulment, custody, and separation matters.</p>
+                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[15rem] 2xl:w-[25rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
+                            <h2 class="text-[#E6A761] 2xl:text-3xl sm:text-2xl text-xl font-bold font-['Abhaya_Libre']">Family Law</h2>
+                            <p class="text-white 2xl:text-xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Compassionate handling of annulment, custody, and separation matters.</p>
                         </div>
                         <!-- labor disputes -->
-                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[17rem] 2xl:w-[30rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
-                            <h2 class="text-[#E6A761] 2xl:text-5xl sm:text-4xl text-2xl font-bold font-['Abhaya_Libre']">Labor Disputes</h2>
-                            <p class="text-white 2xl:text-2xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Championing workers' rights in dismissal and benefits conflicts.</p>
+                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[15rem] 2xl:w-[25rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
+                            <h2 class="text-[#E6A761] 2xl:text-3xl sm:text-2xl text-xl font-bold font-['Abhaya_Libre']">Labor Disputes</h2>
+                            <p class="text-white 2xl:text-xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Championing workers' rights in dismissal and benefits conflicts.</p>
                         </div>
                         <!-- property and real estate-->
-                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[17rem] 2xl:w-[30rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
-                            <h2 class="text-[#E6A761] 2xl:text-5xl sm:text-4xl text-2xl font-bold font-['Abhaya_Libre']">Property and Real Estate</h2>
-                            <p class="text-white 2xl:text-2xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Securing assets through title actions, registration, and transfers.</p>
+                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[15rem] 2xl:w-[25rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
+                            <h2 class="text-[#E6A761] 2xl:text-3xl sm:text-2xl text-xl font-bold font-['Abhaya_Libre']">Property and Real Estate</h2>
+                            <p class="text-white 2xl:text-xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Securing assets through title actions, registration, and transfers.</p>
                         </div>
                         <!-- notarial services -->
-                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[17rem] 2xl:w-[30rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
-                            <h2 class="text-[#E6A761] 2xl:text-5xl sm:text-4xl text-2xl font-bold font-['Abhaya_Libre']">Notarial Services</h2>
-                            <p class="text-white 2xl:text-2xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Fast and affordable notarization of contracts and affidavits.</p>
+                        <div class="flex flex-col justify-center items-center bg-[#570907] h-48 2xl:h-[15rem] 2xl:w-[25rem] sm:w-[20rem] w-60 text-center p-5 rounded-md m-10">
+                            <h2 class="text-[#E6A761] 2xl:text-3xl sm:text-2xl text-xl font-bold font-['Abhaya_Libre']">Notarial Services</h2>
+                            <p class="text-white 2xl:text-xl sm:text-lg text-sm mt-5 font-[Open_Sans]">Fast and affordable notarization of contracts and affidavits.</p>
                         </div>
                     </div>
                 </div>
@@ -159,8 +179,8 @@
                         <h1 class="text-white font-bold sm:text-4xl text-2xl">Transparent and Affordable Fees</h1>
                     </div>
                     <div class="2xl:mb-10 2xl:mr-20 m-5 2xl:text-right sm:text-left text-center 2xl:pl-0 flex-1 text-[#570907]">
-                        <p class="2xl:text-3xl">Honest rates for premium representation with no hidden charges.</p>
-                        <h3 class="font-bold 2xl:text-4xl 2xl:mt-10 mt-2">Contact us for fees and pricing</h3>
+                        <p class="2xl:text-xl">Honest rates for premium representation with no hidden charges.</p>
+                        <h3 class="font-bold 2xl:text-2xl mt-2">Contact us for fees and pricing</h3>
                     </div>
                 </div>
             </div>
@@ -168,18 +188,19 @@
 
         <section id="contact" class="min-h-screen bg-[url('/build/img/pillars2.jpg')] bg-cover bg-no-repeat flex justify-center items-center">
             <!-- This div contains the law office's information (left) and the form for clients to fill-up for inquiries (right)-->
-            <div class="flex flex-col xl:flex-row">
+            <div class="flex flex-col xl:flex-row lg:m-48 md:m-24 m-0">
                 <!-- This div represents the left side of the card containing the law office's address and contact information-->
-                <div class="hidden xl:flex flex-1 marble justify-center items-center">
-                    <div class="flex flex-col my-32">
+                <div class="marble hidden xl:flex flex-1 justify-center items-center">
+                    <div class="flex flex-col">
+                        <!-- Get in touch -->
                         <div class="mb-10">
-                            <h2 class="text-[#570907] 2xl:text-7xl xl:text-5xl font-extrabold font-['Abhaya_Libre']">Get in Touch</h2>
-                            <p class="font-['Open_Sans'] 2xl:text-2xl xl:text-xl">Schedule a consultation to discus your legal options.</p>
+                            <h2 class="text-[#570907] 2xl:text-5xl xl:text-3xl font-extrabold font-['Abhaya_Libre']">Get in Touch</h2>
+                            <p class="font-['Open_Sans'] 2xl:text-xl xl:text-lg">Schedule a consultation to discus your legal options.</p>
                         </div>
                         <!-- Office address -->
                         <div class="mb-10">
-                            <h3 class="text-[#570907] 2xl:text-5xl xl:text-3xl font-bold font-['Abhaya_Libre']">Office Address</h3>
-                            <p class="2xl:text-2xl xl:text-lg font-['Open_Sans']">
+                            <h3 class="text-[#570907] 2xl:text-3xl xl:text-2xl font-bold font-['Abhaya_Libre']">Office Address</h3>
+                            <p class="2xl:text-xl xl:text-lg font-['Open_Sans']">
                                 Unit 201 - A Residencia de Manila<br>
                                 Suite, 3477, P. Sanchez St.,<br>
                                 Sta. Mesa, Metro Manila 1605<br>
@@ -187,10 +208,10 @@
                         </div>
                         <!-- Contact numbers -->
                         <div class="mb-10">
-                            <h3 class="text-[#570907] 2xl:text-5xl xl:text-3xl font-bold font-['Abhaya_Libre']">
+                            <h3 class="text-[#570907] 2xl:text-3xl xl:text-2xl font-bold font-['Abhaya_Libre']">
                                 Phone
                             </h3>
-                            <p class="2xl:text-2xl xl:text-lg font-['Open_Sans']"> 
+                            <p class="2xl:text-xl xl:text-lg font-['Open_Sans']"> 
                                 +63 (2) 8815-2624<br>
                                 +63 977 407 9796<br>
                                 +63 926 722 7544<br>
@@ -198,16 +219,16 @@
                         </div>
                         <!-- Email addresses -->
                         <div class="mb-10">
-                            <h3 class="text-[#570907] 2xl:text-5xl xl:text-3xl font-bold font-['Abhaya_Libre']">Email</h3>
-                            <p class="2xl:text-2xl xl:text-lg font-['Open_Sans']">
+                            <h3 class="text-[#570907] 2xl:text-3xl xl:text-2xl font-bold font-['Abhaya_Libre']">Email</h3>
+                            <p class="2xl:text-xl xl:text-lg font-['Open_Sans']">
                                 j.ibabao@jvsticialawoffice.ph<br>
                                 k.ladines@jvsticialawoffice.ph<br>
                             </p>
                         </div>
                         <!-- Office hours -->
                         <div class="mb-10">
-                            <h3 class="text-[#570907] 2xl:text-5xl xl:text-3xl font-bold font-['Abhaya_Libre']">Office Hours</h3>
-                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']">    
+                            <h3 class="text-[#570907] 2xl:text-3xl xl:text-2xl font-bold font-['Abhaya_Libre']">Office Hours</h3>
+                            <p class="2xl:text-xl xl:text-lg font-['Open_Sans']">    
                                 Monday &#8211; Friday: 9:00 AM &#8211; 6:00 PM<br>
                                 Saturday: By Appointment
                             </p>
@@ -217,67 +238,72 @@
                 <!-- this div represents the right side of the box containing the message form for the client to fill -->
                 <div class="flex-1 flex justify-center items-center bg-[#570907]">
                     <!-- content div containing the form -->
-                    <div class="p-24">
-                        <form action="" class="max-w-full">
+                    <div class="2xl:p-24 md:p-12 p-8">
+                        <form action="">
                             <!-- full name textfield -->
-                            <label for="full-name" class="text-white 2xl:text-2xl text-xl font-['Open_Sans']">Full Name</label>
-                            <input type="text" id="full-name" name="full-name" placeholder="John Doe" class="w-full border-4 border-[#C7A776] rounded-sm mt-2 mb-10 h-10 pl-2 2xl:text-xl text-lg">
+                            <label for="full-name" class="text-white text-xl font-['Open_Sans']">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" placeholder="John Doe" class="w-full border-4 border-[#C7A776] rounded-sm xl:mt-2 mt-1 2xl:mb-10 mb-5 h-10 pl-2 2xl:text-xl text-lg">
                             <!-- contact no. textfield -->
-                            <label for="contact"  class="text-white 2xl:text-2xl text-xl font-['Open_Sans']">Contact Number</label>
-                            <input type="text" id="contact" name="contact" placeholder="09123456789" class="w-full border-4 border-[#C7A776] rounded-sm mt-2 mb-10 h-10 pl-2 2xl:text-xl text-lg">
+                            <label for="contact"  class="text-white text-xl font-['Open_Sans']">Contact Number</label>
+                            <input type="text" id="contact" name="contact" placeholder="09123456789" class="w-full border-4 border-[#C7A776] rounded-sm xl:mt-2 mt-1 2xl:mb-10 mb-5 h-10 pl-2 2xl:text-xl text-lg">
                             <!-- email address textfield-->
-                            <label for="email" class="text-white 2xl:text-2xl text-xl font-['Open_Sans']">Email Address</label>
-                            <input type="text" id="full-name" name="full-name" placeholder="example@gmail.com" class="w-full border-4 border-[#C7A776] rounded-sm mt-2 mb-10 pl-2 h-10 2xl:text-xl text-lg">
+                            <label for="email" class="text-white text-xl font-['Open_Sans']">Email Address</label>
+                            <input type="text" id="full-name" name="full-name" placeholder="example@email.com" class="w-full border-4 border-[#C7A776] rounded-sm xl:mt-2 mt-1 2xl:mb-10 mb-5 pl-2 h-10 2xl:text-xl text-lg">
                             <!-- message text area -->
-                            <textarea name="message" id="message" cols="20" rows="10" placeholder="Your Message" class="w-full border-4 border-[#C7A776] rounded-sm mt-2 mb-10 pl-2 pt-2 2xl:text-xl text-lg"></textarea>
-                            <button class="bg-[#C7A776] text-xl font-['Open_Sans'] font-bold p-5 mt-5 rounded-md transition-opacity hover:opacity-85 active:opacity-70">
+                            <textarea name="message" id="message" placeholder="Your Message" class="w-full h-[15rem] border-4 border-[#C7A776] rounded-sm xl:mt-2 mt-1 2xl:mb-10 mb-5 pl-2 pt-2 2xl:text-xl text-lg"></textarea>
+                            <button class="bg-[#C7A776] xl:text-xl text-md font-['Open_Sans'] font-bold p-5 mt-5 rounded-md transition-opacity hover:opacity-85 active:opacity-70">
                                 Submit
                             </button>
                         </form>
                     </div>
                 </div>
-                <!-- hidden. only shows when in mobile view to show form above the company info-->
-                <div class="xl:hidden flex flex-1 marble justify-center items-center">
-                    <div class="flex flex-col my-32">
-                        <div class="mb-10">
-                            <h2 class="text-[#570907] 2xl:text-7xl md:text-5xl font-extrabold font-['Abhaya_Libre']">Get in Touch</h2>
-                            <p class="font-['Open_Sans'] 2xl:text-2xl md:text-xl">Schedule a consultation to discus your legal options.</p>
+                <!-- hidden. same as the left part of the box but only shows when in mobile view to show form above the company info-->
+                <div class="marble xl:hidden flex flex-1 justify-center items-center lg:p-0 p-8">
+                    <div class="flex flex-col md:my-10 my-5">
+                        <!-- Get in touch -->
+                        <div class="md:mb-10 mb-5">
+                            <h2 class="text-[#570907] md:text-3xl text-2xl font-extrabold font-['Abhaya_Libre']">Get in Touch</h2>
+                            <p class="font-['Open_Sans'] md:text-lg text-md">Schedule a consultation to discus your legal options.</p>
                         </div>
-                        <!-- Office address -->
-                        <div class="mb-10">
-                            <h3 class="text-[#570907] 2xl:text-5xl md:text-3xl font-bold font-['Abhaya_Libre']">Office Address</h3>
-                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']">
-                                Unit 201 - A Residencia de Manila<br>
-                                Suite, 3477, P. Sanchez St.,<br>
-                                Sta. Mesa, Metro Manila 1605<br>
-                            </p>
+                        <div class="flex md:flex-row flex-col">
+                            <!-- Office address -->
+                            <div class="md:mb-10 mb-5 mr-5">
+                                <h3 class="text-[#570907] md:text-2xl text-xl font-bold font-['Abhaya_Libre']">Office Address</h3>
+                                <p class="md:text-lg text-md font-['Open_Sans']">
+                                    Unit 201 - A Residencia de Manila<br>
+                                    Suite, 3477, P. Sanchez St.,<br>
+                                    Sta. Mesa, Metro Manila 1605<br>
+                                </p>
+                            </div>
+                            <!-- Contact numbers -->
+                            <div class="md:mb-10 mb-5">
+                                <h3 class="text-[#570907] md:text-2xl text-xl font-bold font-['Abhaya_Libre']">
+                                    Phone
+                                </h3>
+                                <p class="md:text-lg text-md font-['Open_Sans']"> 
+                                    +63 (2) 8815-2624<br>
+                                    +63 977 407 9796<br>
+                                    +63 926 722 7544<br>
+                                </p>
+                            </div>
                         </div>
-                        <!-- Contact numbers -->
-                        <div class="mb-10">
-                            <h3 class="text-[#570907] 2xl:text-5xl md:text-3xl font-bold font-['Abhaya_Libre']">
-                                Phone
-                            </h3>
-                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']"> 
-                                +63 (2) 8815-2624<br>
-                                +63 977 407 9796<br>
-                                +63 926 722 7544<br>
-                            </p>
-                        </div>
-                        <!-- Email addresses -->
-                        <div class="mb-10">
-                            <h3 class="text-[#570907] 2xl:text-5xl md:text-3xl font-bold font-['Abhaya_Libre']">Email</h3>
-                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']">
-                                j.ibabao@jvsticialawoffice.ph<br>
-                                k.ladines@jvsticialawoffice.ph<br>
-                            </p>
-                        </div>
-                        <!-- Office hours -->
-                        <div class="mb-10">
-                            <h3 class="text-[#570907] 2xl:text-5xl md:text-3xl font-bold font-['Abhaya_Libre']">Office Hours</h3>
-                            <p class="2xl:text-2xl md:text-lg font-['Open_Sans']">    
-                                Monday &#8211; Friday: 9:00 AM &#8211; 6:00 PM<br>
-                                Saturday: By Appointment
-                            </p>
+                        <div class="flex md:flex-row flex-col">
+                            <!-- Email addresses -->
+                            <div class="md:mb-10 mb-5 mr-5">
+                                <h3 class="text-[#570907] md:text-2xl text-xl font-bold font-['Abhaya_Libre']">Email</h3>
+                                <p class="md:text-lg text-md font-['Open_Sans']">
+                                    j.ibabao@jvsticialawoffice.ph<br>
+                                    k.ladines@jvsticialawoffice.ph<br>
+                                </p>
+                            </div>
+                            <!-- Office hours -->
+                            <div class="md:mb-10 mb-5">
+                                <h3 class="text-[#570907] md:text-2xl text-xl font-bold font-['Abhaya_Libre']">Office Hours</h3>
+                                <p class="md:text-lg text-md font-['Open_Sans']">    
+                                    Monday &#8211; Friday: 9:00 AM &#8211; 6:00 PM<br>
+                                    Saturday: By Appointment
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
