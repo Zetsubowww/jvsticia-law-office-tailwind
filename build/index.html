@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="sm:scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="/favicon.ico">
     <title>Jvsticia Law Office Tailwind</title>
+    <script src="/main.js"></script>
 </head>
 <body class="bg-black">
     <header class="bg-transparent font-['Inter'] text-[#F0EFE2] font-normal fixed top-0 right-0 left-0 z-50">
@@ -19,7 +20,7 @@
                 <img class="max-h-14" src="/build/img/JLO_LOGO.png">
             </a>
             <div>
-                <button id="mobile-open-button" onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')" class="text-3xl lg:hidden focus:outline-none">
+                <button id="mobile-open-button" onclick="toggleSidebar()" class="text-3xl lg:hidden focus:outline-none">
                     &#9776;
                 </button>
                 <nav class="hidden lg:block space-x-8 xl:text-xl lg:text-md font-['Inter']" aria-label="main">
@@ -34,7 +35,8 @@
     </header>
 
     <section>
-        <aside id="sidebar" class="-translate-x-full fixed inset-y-0 left-0 z-50 w-[220px] bg-[#060606] px-6 py-5 transition-transform duration-300">
+        <div id="sidebar-overlay" onclick="closeSidebar()" class="hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"></div>
+        <aside id="sidebar" class="-translate-x-full fixed inset-y-0 left-0 z-50 flex flex-col justify-center w-[220px] bg-[#060606] px-6 py-5 transition-transform duration-300">
             <a href="#hero">
                 <img src="/build/img/JLO_J.png" alt="Jvsticia Law Office" class="h-20 w-20">
             </a>
@@ -87,9 +89,9 @@
                 <!-- The top right is left empty only with a bg-image to create space for the bottom right section -->
                 <div class="hidden 2xl:block md:h-[30%] bg-[url('/build/img/ph-4.jpg')] 2xl:border-b-2 border-8 border-[#570907] bg-bottom bg-cover"></div>
                 <!-- The bottom right includes the marble div box containing the description about the company and its stats -->
-                <div class="marble flex flex-1 justify-center items-center 2xl:rounded-tl-[10rem] 2xl:border-t-8 2xl:border-l-8 2xl:border-[#570907] sm:max-2xl:rounded-none z-10">
+                <div class="marble flex 2xl:flex-1 justify-center items-center h-screen 2xl:rounded-tl-[10rem] 2xl:border-t-8 2xl:border-l-8 2xl:border-[#570907] z-10">
                     <!-- In laptop view the flag image will then be within the marble div -->
-                    <div class="2xl:hidden lg:block hidden flex-1 bg-[url('/build/img/flag-1.jpg')] bg-cover bg-no-repeat rounded-r-3xl xl:h-[30rem] h-[30rem] shadow-2xl"></div>
+                    <div class="2xl:hidden lg:block hidden flex-1 bg-[url('/build/img/flag-1.jpg')] bg-cover bg-no-repeat rounded-r-3xl h-[80%] shadow-2xl"></div>
                     <div class="2xl:flex-none lg:flex-1 2xl:m-0 md:mx-24 mx-32 2xl:w-[30%]">
                         <div>
                             <h1 class="font-['Abhaya_Libre'] font-extrabold text-center md:text-left text-4xl text-[#570907]">
