@@ -14,15 +14,20 @@
     <script src="/main.js"></script>
 </head>
 <body class="bg-black">
+    <!-- header mainly seen on laptop -> desktop views -->
     <header class="bg-transparent font-['Inter'] text-[#F0EFE2] font-normal fixed top-0 right-0 left-0 z-50">
+        <!-- this sections contains the main contents of the header restricted with a max-w to make header compact on larger screens -->
         <section class="xl:max-w-7xl max-w-4xl mx-auto p-4 flex justify-between items-center">
+            <!-- law office logo used as an anchor to lead to hero page -->
             <a href="#hero">
                 <img class="max-h-14" src="/build/img/JLO_LOGO.png">
             </a>
             <div>
+                <!-- burger icon made as button to complete toggleSidebar() seen on "main.js" works as sidebar activator -->
                 <button id="mobile-open-button" onclick="toggleSidebar()" class="text-3xl lg:hidden focus:outline-none">
                     &#9776;
                 </button>
+                <!-- default header seen on laptop -> desktop views -->
                 <nav class="hidden lg:block space-x-8 xl:text-xl lg:text-md font-['Inter']" aria-label="main">
                     <a href="#about" class="hover:underline">About Us</a>
                     <a href="#expertise" class="hover:underline">Practice Areas</a>
@@ -34,13 +39,18 @@
         </section>
     </header>
 
+    <!-- this section contains the sidebar and all its functionalities -->
     <section>
+        <!-- div created as overlay. used to darken and blur main page. onclick closeSidebar() also added so when clicked the sidebar closes --->
         <div id="sidebar-overlay" onclick="closeSidebar()" class="hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"></div>
+        <!-- sidebar -->
         <aside id="sidebar" class="-translate-x-full fixed inset-y-0 left-0 z-50 flex flex-col justify-center w-[220px] bg-[#060606] px-6 py-5 transition-transform duration-300">
+            <!-- law office "J" logo used as anchor for hero section -->
             <a href="#hero">
-                <img src="/build/img/JLO_J.png" alt="Jvsticia Law Office" class="h-20 w-20">
+                <img src="/build/img/JLO_J.png" alt="Jvsticia Law Office" class="-ml-5 h-20 w-20">
             </a>
-            <nav class="flex flex-1 flex-col justify-center items-center space-y-8 text-white text-center font-['Inter']">
+            <!-- page sections -->
+            <nav class="flex flex-1 flex-col justify-center space-y-8 text-white font-['Inter']">
                 <a href="#about" class="hover:underline">About Us</a>
                 <a href="#expertise" class="hover:underline">Practice Areas</a>
                 <a href="#fees" class="hover:underline">Fees</a>
@@ -48,7 +58,6 @@
                 <a href="#contact" class="hover:underline">Contact Us</a>
             </nav>
         </aside>
-
     </section>
 
     <main>
