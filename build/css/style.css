@@ -583,12 +583,12 @@ video {
   z-index: 10;
 }
 
-.z-50 {
-  z-index: 50;
-}
-
 .z-40 {
   z-index: 40;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .m-0 {
@@ -626,10 +626,6 @@ video {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 
 .mb-5 {
@@ -696,44 +692,12 @@ video {
   height: 20rem;
 }
 
-.h-\[60rem\] {
-  height: 60rem;
+.h-\[80\%\] {
+  height: 80%;
 }
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[30rem\] {
-  height: 30rem;
-}
-
-.h-\[50\%\] {
-  height: 50%;
-}
-
-.h-\[60\%\] {
-  height: 60%;
-}
-
-.h-\[100\%\] {
-  height: 100%;
-}
-
-.h-\[20\%\] {
-  height: 20%;
-}
-
-.h-\[700\%\] {
-  height: 700%;
-}
-
-.h-\[70\%\] {
-  height: 70%;
-}
-
-.h-\[80\%\] {
-  height: 80%;
 }
 
 .max-h-14 {
@@ -885,12 +849,12 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
-.bg-transparent {
-  background-color: transparent;
-}
-
 .bg-black\/60 {
   background-color: rgb(0 0 0 / 0.6);
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-\[url\(\'\/build\/img\/building1\.png\'\)\] {
@@ -1174,10 +1138,6 @@ video {
     justify-content: flex-end;
   }
 
-  .sm\:scroll-smooth {
-    scroll-behavior: smooth;
-  }
-
   .sm\:rounded-r-lg {
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
@@ -1337,10 +1297,6 @@ video {
 
   .xl\:hidden {
     display: none;
-  }
-
-  .xl\:h-\[30rem\] {
-    height: 30rem;
   }
 
   .xl\:max-w-7xl {
@@ -1522,12 +1478,12 @@ video {
     border-color: rgb(87 9 7 / var(--tw-border-opacity, 1));
   }
 
-  .\32xl\:p-24 {
-    padding: 6rem;
-  }
-
   .\32xl\:p-0 {
     padding: 0px;
+  }
+
+  .\32xl\:p-24 {
+    padding: 6rem;
   }
 
   .\32xl\:pl-0 {
